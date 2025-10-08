@@ -1,6 +1,5 @@
 package karazin.unit1.topic
 
-
 // This is an object. Object has many purposes but here we use is as singleton namespace
 // We do not use curly braces aka { and } as much as possible
 // We do use semicolons and tabs instead
@@ -43,8 +42,4 @@ object basics:
       println("Ups, I'm forbidden, don't forget to remove me")
       // Result of a multiline if-then-else
       str
-    else
-      "Hello world"
-
-
-
+    else "Hello world"
