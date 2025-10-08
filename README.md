@@ -236,12 +236,12 @@ Since some homework tests have not been implemented yet, this results in a failu
 ### Single test execution
 To execute a single tests run the following command
 ```shell
-sbt "testOnly <path to the test>"
+sbt "Test / testOnly <path to the test>"
 ```
 in the commandline, or
 
 ```shell
-testOnly <path to the test>
+Test / testOnly <path to the test>
 ```
 
 in the `sbt` shell,
@@ -249,24 +249,24 @@ in the `sbt` shell,
 For example to execute `FunctionsSpecification` from Unit 1 `topic` run the following command
 
 ```shell
-sbt "testOnly karazin.unit1.topic.FunctionsSpecification"
+sbt "Test / testOnly karazin.unit1.topic.FunctionsSpecification"
 ```
 in the commandline, or
 
 ```shell
-testOnly karazin.unit1.topic.FunctionsSpecification
+Test / testOnly karazin.unit1.topic.FunctionsSpecification
 ```
 
 ### Specific unit tests execution
 To execute the tests for a certain unit run the following command
 
 ```shell
-sbt "testOnly <path to the certain unit>"
+sbt "Test / testOnly <path to the certain unit>"
 ```
 in the commandline, or
 
 ```shell
-testOnly <path to the certain unit>
+Test / testOnly <path to the certain unit>
 ```
 
 in the `sbt` shell, where `<path to the certain unit>` is
@@ -279,12 +279,12 @@ in the `sbt` shell, where `<path to the certain unit>` is
 
 i.e. to execute tests for Unit 1 run the following command
 ```shell
-sbt "testOnly karazin.unit1"
+sbt "Test / testOnly karazin.unit1.*"
 ```
 in the commandline, or
 
 ```shell
-testOnly karazin.unit1
+Test / testOnly karazin.unit1.*
 ```
 
 in the `sbt` shell,
@@ -412,23 +412,23 @@ in the `sbt` shell.
 To compile the code, fix the formatting and run tests for a certain unit run
 
 ```shell
-sbt "clean compile Test/compile scalafmtAll scalafmtCheckAll testOnly <path to the certain unit>"
+sbt "clean compile Test/compile scalafmtAll scalafmtCheckAll Test / testOnly <path to the certain unit>"
 ```
 in the commandline, or
 
 ```shell
-clean; compile; Test/compile; scalafmtAll; scalafmtCheckAll; testOnly <path to the certain unit>
+clean; compile; Test/compile; scalafmtAll; scalafmtCheckAll; Test / testOnly <path to the certain unit>
 ```
 
 # GitHub Actions build
 To replicate the behavior of the GitHub Actions build locally, run:
 
 ```shell
-sbt "clean compile Test/compile scalafmtCheckAll testOnly <path to the certain unit>"
+sbt "clean compile Test/compile scalafmtCheckAll Test / testOnly <path to the certain unit>"
 ```
 in the commandline, or
 ```shell
-clean; compile; Test/compile; scalafmtCheckAll; testOnly <path to the certain unit>
+clean; compile; Test/compile; scalafmtCheckAll; Test / testOnly <path to the certain unit>
 ```
 in the `sbt` shell
 
