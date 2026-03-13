@@ -27,8 +27,11 @@ object arithmetic:
     require(left >= 0, "Left must be non-negative")
     require(right >= 0, "Right must be non-negative")
     // ???
+    if isZero(right) then left
+    else addition(increment(left), decrement(right))
+
     isZero(right) match
-      case true => left
+      case true  => left
       case false => addition(increment(left), decrement(right))
 
   def multiplication(left: Number, right: Number): Number =
